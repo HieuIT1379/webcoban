@@ -1,0 +1,215 @@
+/* bien dung chung */
+:root {
+  --header-height: 70px;
+  --main-bg: #d5d5d5;
+  --main-transition: all 0.3s ease;
+  --main-color: whitesmoke;
+}
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* thuoc tinh chung */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+header {
+  height: var(--header-height);
+  border-bottom: 1px solid black;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+li {
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+  color: unset;
+}
+input {
+  outline: none;
+}
+.container {
+  max-width: 1240px;
+  margin: auto;
+}
+.header-search {
+  position: relative;
+}
+.row-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* thuoc tinh rieng doi tuong cu the */
+.header-logo img {
+  width: 100px;
+  cursor: pointer;
+}
+
+header .row-flex {
+  align-items: center;
+}
+.header-nav nav ul {
+  display: flex;
+}
+.header-nav nav ul li {
+  padding: 0 10px;
+  transition: var(--main-transition);
+  cursor: pointer;
+}
+.header-nav nav ul li {
+  line-height: var(--header-height);
+  font-size: smaller;
+}
+.header-nav nav ul li:hover {
+  background-color: var(--main-bg);
+}
+.header-search input {
+  height: 30px;
+  border: 1px solid black;
+  padding-left: 24px;
+  border-radius: 20px;
+}
+
+.header-search i {
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.hearder-cart i {
+  font-size: larger;
+  cursor: pointer;
+  position: relative;
+}
+/* thuoc tinh so tren gio hang */
+.hearder-cart i::after {
+  position: absolute;
+  display: flex;
+  content: attr(number);
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  right: -10px;
+  top: -10px;
+  color: var(--main-color);
+  justify-content: center;
+  text-align: center;
+  font-size: smaller;
+}
+
+/* slider */
+.slider {
+  width: 100vw;
+  overflow: hidden;
+  aspect-ratio: 2.43/1;
+  position: relative;
+}
+.slider-items {
+  position: relative;
+  transition: var(--main-transition);
+}
+.slider-item {
+  position: absolute;
+}
+.slider-item img {
+  width: 100vw;
+}
+.slider-arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+.slider-arrow i {
+  cursor: pointer;
+  font-size: larger;
+}
+
+/* reponsive */
+
+/* an cac doi tuong den khi responsive */
+.header-bar-icon,
+.header-logo-mobile {
+  display: none;
+}
+/* thuoc tinh cac doi tuong khi responsive */
+@media only screen and (max-width: 1249px) {
+  .row-flex {
+    padding: 0 14px;
+  }
+  header .row-flex {
+    height: 70px;
+  }
+  .header-nav {
+    position: fixed;
+    top: calc(-100% - var(--header-height));
+    left: 0;
+    width: 100vw;
+    background-color: black;
+    color: var(--main-color);
+    transition: var(--main-transition);
+  }
+  .header-nav.active {
+    top: var(--header-height);
+  }
+  .header-nav nav ul {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .header-logo-mobile img {
+    width: 100px;
+  }
+  .header-bar-icon,
+  .header-logo-mobile {
+    display: block;
+  }
+
+  .header-search {
+    display: none;
+  }
+  .header-logo {
+    display: none;
+  }
+  .header-nav nav ul li:hover {
+    background-color: var(--main-bg);
+  }
+}
